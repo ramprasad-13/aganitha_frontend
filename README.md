@@ -1,16 +1,39 @@
-# React + Vite
+# 📊 TinyLink URL Shortener - Frontend (React/Tailwind)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This directory contains the React single-page application (SPA) for the TinyLink dashboard. It provides the UI for link creation, listing, statistics, and health checking.
 
-Currently, two official plugins are available:
+## 🚀 Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites
 
-## React Compiler
+* Node.js (v18+)
+* The **TinyLink Backend** must be running (e.g., on `http://localhost:5000`).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🛠️ Installation
 
-## Expanding the ESLint configuration
+1.  **Navigate to the Frontend Directory:**
+    ```bash
+    cd tiny-link/frontend
+    ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2.  **Install Dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Environment Variables:**
+    Create a `.env` file in the root of the **frontend directory**. This links the frontend application to the running backend API.
+
+    ```env
+    # Change the port (5000) if your backend is running elsewhere
+    VITE_BACKEND_URL=http://localhost:5000 
+    ```
+
+    *Note: If you encounter proxy issues during development (e.g., 404 on redirects), ensure your `vite.config.js` is correctly configured to proxy both `/api` and root (`/`) requests to the backend.*
+
+### ▶️ Running the Application
+
+Start the development server:
+
+```bash
+npm run dev
