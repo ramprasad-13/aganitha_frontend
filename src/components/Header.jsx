@@ -1,3 +1,5 @@
+// frontend/src/components/Header.jsx
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -13,15 +15,22 @@ const Header = () => {
             </span>
           </Link>
 
-          {/* Navigation/Actions (Minimal for this project) */}
-          <nav className="flex space-x-4">
+          {/* Navigation/Actions */}
+          <nav className="flex space-x-4 items-center">
             <Link 
               to="/" 
               className="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150"
             >
               Dashboard
             </Link>
-            {/* Optional: Future login/user links could go here */}
+            
+            {/* NEW: Health Check Button */}
+            <Link 
+              to="/healthz" 
+              className="bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-medium py-1.5 px-3 rounded-md transition duration-150"
+            >
+              🩺 Check Health
+            </Link>
           </nav>
         </div>
       </div>

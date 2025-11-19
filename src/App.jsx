@@ -4,13 +4,13 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import StatsPage from './components/StatsPage';
-import Header from './components/Header'; // <-- Import Header
+import HealthCheck from './components/HealthCheck'; // <-- NEW IMPORT
+import Header from './components/Header'; 
 
 const App = () => {
   return (
     <Router>
       <div className="min-h-screen bg-gray-100">
-        {/* Header is outside of Routes so it renders on every page */}
         <Header /> 
         
         <main className="py-8">
@@ -21,9 +21,8 @@ const App = () => {
               {/* Stats Page - Path: /code/:code */}
               <Route path="/code/:code" element={<StatsPage />} />
               
-              {/* Health Check: Not a separate page, but accessible */}
-              {/* You might use a simple component that hits /healthz and shows the result */}
-              <Route path="/healthz-ui" element={<div className="container mx-auto p-8 text-center text-xl">Health Check UI (Implementation TBD)</div>} />
+              {/* Health Check Page - Path: /healthz-ui */}
+              <Route path="/healthz" element={<HealthCheck />} /> {/* <-- NEW ROUTE */}
 
               {/* Fallback for 404 */}
               <Route path="*" element={
